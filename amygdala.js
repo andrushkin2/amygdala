@@ -1,19 +1,20 @@
 if (Meteor.isClient) {
-  Template.hello.greeting = function () {
-    return "Welcome to amygdala.";
-  };
-
-  Template.hello.events({
-    'click input': function () {
-      // template data, if any, is available in 'this'
-      if (typeof console !== 'undefined')
-        console.log("You pressed the button");
-    }
-  });
+    Meteor.subscribe("pages");
+    pages = new Meteor.Collection("pages");
+    var query = pages.find("1");
+    var handle = query.observeChanges({
+        changed: function (id, data) {
+            location.hash = data.text;
+        }
+    });
 }
 
 if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
+    pages = new Meteor.Collection("pages");
+    Meteor.publish("pages", function () {
+        return pages.find();
+    });
+    Meteor.startup(function () {
+        // code to run on server at startup
+    });
 }

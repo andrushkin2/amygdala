@@ -3,11 +3,178 @@
 </head>
 
 <body>
-  {{> hello}}
+  {{> amygdala}}
 </body>
 
-<template name="hello">
-  <h1>Hello World!</h1>
-  {{greeting}}
-  <input type="button" value="Click" />
+<template name="amygdala">
+    <div id="impress">
+        {{> slide1}}
+        {{> slide2}}
+        {{> slide3}}
+        {{> slide4}}
+        {{> slide5}}
+        {{> slide6}}
+        {{> slide7}}
+        {{> slide8}}
+        {{> slide9}}
+        {{> slide10}}
+        {{> slide11}}
+        {{> slide12}}
+        {{> slide13}}
+        {{> slide14}}
+        {{> slide15}}
+        {{> slide18}}
+        {{> slide16}}
+        {{> slide17}}
+        {{> slide19}}
+        {{> slide20}}
+    </div>
+</template>
+
+<template name="slide1">
+    <div id="slide1" class="step slide" data-x="0" data-y="0">
+        <q class="a">Еще не используете RESTful API?</q>
+        <q class="b">Тогда мы идем к ВАМ!</q>
+    </div>
+</template>
+<template name="slide2">
+    <div id="slide2" class="step needHide" data-x="1000" data-y="1000" data-scale="4">
+        <img src="rest.png">
+    </div>
+</template>
+<template name="slide3">
+    <div id="slide3" class="step needHide" data-x="2000" data-y="1000" data-scale="4">
+        <q>2000 год - Рой Филдинг</q>
+    </div>
+</template>
+<template name="slide4">
+    <div id="slide4" class="step needHide" data-x="2000" data-y="2000" data-scale="4">
+        <q> Простый интерфейс управления информацией без использования дополнительных внутренних прослоек</q>
+    </div>
+</template>
+<template name="slide5">
+    <div id="slide5" class="step needHide" data-x="3000" data-y="2000" data-scale="4">
+        <q> Например: третья книга с книжной полки будет иметь вид <b>/book/3</b></q>
+        <br>
+        <q> а 35 страница в этой книге —  <b>/book/3/page/35</b></q>
+    </div>
+</template>
+<template name="slide6">
+    <div id="slide6" class="step needHide" data-x="3000" data-y="3000" data-scale="4">
+        <q> Управление информацией сервиса:</q>
+        <br>
+        <q>GET /book/ — <small>получить список всех книг</small></q><br>
+        <q>GET /book/3/ — <small>получить книгу номер 3</small></q><br>
+        <q>POST /book/3 – <small>изменить/добавить книгу (данные в теле запроса)</small></q><br>
+        <q>DELETE /book/3 – <small>удалить книгу</small></q>
+    </div>
+</template>
+<template name="slide7">
+    <div id="slide7" class="step needHide" data-x="4000" data-y="3000" data-scale="4">
+        <q>Как это сделать?</q>
+        <img src="howtodo.jpg">
+    </div>
+</template>
+<template name="slide8">
+    <div id="slide8" class="step slide needHide" data-x="4000" data-y="4000" data-scale="4">
+
+    </div>
+</template>
+<template name="slide9">
+    <div id="slide9" class="step needHide" data-x="5000" data-y="4000" data-scale="4">
+        <q>Тебе поможет</q>
+        <br>
+        <q><b>мозжечковая миндалина</b></q>
+        <img src="mendalina.gif">
+    </div>
+</template>
+<template name="slide10">
+    <div id="slide10" class="step needHide" data-x="5000" data-y="4000" data-scale="6">
+        <h1 class="impre">amygdala</h1><h1 class="dot">.</h1><h1 class="js">js</h1>
+    </div>
+</template>
+<template name="slide11">
+    <div id="slide11" class="step needHide" data-x="5000" data-y="4000" data-scale="2">
+        <q>Установка:</q>
+        <br>
+        <q class="code">npm install amygdala</q>  <br>
+        <q class="code">bower install amygdala</q>  <br>
+        <q class="code">https://github.com/lincolnloop/amygdala</q>
+    </div>
+</template>
+<template name="slide12">
+    <div id="slide12" class="step needHide" data-x="5000" data-y="6000" data-scale="2" data-rotate-z="90">
+        <q>Настройка:</q>
+        <br>
+        <img src="setup.png">
+    </div>
+</template>
+<template name="slide13">
+    <div id="slide13" class="step needHide" data-x="5000" data-y="8000" data-scale="2" data-rotate-z="180">
+        <img src="config.png">
+        <q><b>apiUrl</b> - full path to  base API url (required)<br>
+            <b>idAttribute</b> - global primary key attribute (required)<br>
+            <b>headers</b> - any headers that you need to pass on each API request<br>
+            <b>localStorage</b> - enable/disable the persistent localStorage cache</q>
+    </div>
+</template>
+<template name="slide14">
+    <div id="slide14" class="step needHide" data-x="5000" data-y="8000" data-scale="2" data-rotate-z="-180">
+        <img src="shema.png">
+<br>
+        <q><b>url</b> - relative path for each "table" (required)<br>
+            <b>orderBy</b> - order by which you want to retrieve local cached data. eg (name, -name (for reverse))<br>
+            <b>parse</b> - accepts a parse method for cases when your API also returns extra meta data</q>
+    </div>
+</template>
+<template name="slide15">
+    <div id="slide15" class="step needHide" data-x="7000" data-y="8000" data-scale="2" data-rotate-z="-90">
+        <img src="relations.png">
+        <br>
+        <q class="code">store.get('discussions', {'url': '/api/v2/discussion/85273/'}).then(function(){ ... });</q>
+    </div>
+</template>
+<template name="slide18">
+    <div id="slide18" class="step slide needHide" data-x="10000" data-y="12000" data-scale="2" data-rotate-z="-90">
+        <q>Просто слайд</q>
+    </div>
+</template>
+<template name="slide16">
+    <div id="slide16" class="step needHide" data-x="7000" data-y="9000" data-scale="5" data-rotate-z="45">
+        <q>Использование</q>
+        <br>
+        <div class="code">
+            <div>
+            // GET
+            store.get('users').done(function() { ... });</div>
+            <div>
+            // POST
+            store.add('teams', {'name': 'Lincoln Loop', 'active': true}).done(function() { ... });</div>
+            <div>
+            // PUT
+            store.update('users', {'url': '/api/v2/user/32/', 'username': 'amy82', 'active': true}).done(function() { ... });</div>
+            <div>
+            // DELETE
+            store.remove('users', {'url': '/api/v2/user/32/'}).done(function() { ... });</div>
+        </div>
+    </div>
+</template>
+<template name="slide17">
+    <div id="slide17" class="step needHide" data-x="7000" data-y="8000" data-scale="10" data-rotate-z="90">
+        <q>Локальные данные</q>
+        <img src="locally.png">
+    </div>
+</template>
+<template name="slide19">
+    <div id="slide19" class="step needHide" data-x="7000" data-y="8000" data-scale="3" data-rotate-z="190">
+        <q>События</q>
+        <img src="events.png">
+    </div>
+</template>
+<template name="slide20">
+    <div id="slide20" class="step needHide" data-x="1" data-y="2" data-scale="40" data-rotate-z="3">
+        <q>Как-то так...</q>
+        <br>
+        <q>Вопросы?</q>
+    </div>
 </template>
